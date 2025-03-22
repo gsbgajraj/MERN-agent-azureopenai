@@ -6,7 +6,9 @@ const FolderTree = ({ structure }) => {
             <div className="pl-4">
                 <strong>{name}</strong>
                 {Object.keys(node).map((key) => (
-                    <div key={key}>{typeof node[key] === "object" ? renderTree(node[key], key) : key}</div>
+                    <div key={key}>
+                        {typeof node[key] === "object" ? renderTree(node[key], key) : key}
+                    </div>
                 ))}
             </div>
         );
